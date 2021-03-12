@@ -112,8 +112,14 @@ typedef UINT16 TPM2_ALG_ID;
 #define TPM2_ALG_CBC                 ((TPM2_ALG_ID) 0x0042)
 #define TPM2_ALG_CFB                 ((TPM2_ALG_ID) 0x0043)
 #define TPM2_ALG_ECB                 ((TPM2_ALG_ID) 0x0044)
+#define TPM2_ALG_CCM                 ((TPM2_ALG_ID) 0x0050)
+#define TPM2_ALG_GCM                 ((TPM2_ALG_ID) 0x0051)
+#define TPM2_ALG_KW                  ((TPM2_ALG_ID) 0x0052)
+#define TPM2_ALG_KWP                 ((TPM2_ALG_ID) 0x0053)
+#define TPM2_ALG_EAX                 ((TPM2_ALG_ID) 0x0054)
+#define TPM2_ALG_EDDSA               ((TPM2_ALG_ID) 0x0060)
 #define TPM2_ALG_FIRST               ((TPM2_ALG_ID) 0x0001)
-#define TPM2_ALG_LAST                ((TPM2_ALG_ID) 0x0044)
+#define TPM2_ALG_LAST                ((TPM2_ALG_ID) 0x0060)
 
 /* From TCG Algorithm Registry: Definition of TPM2_ECC_CURVE Constants */
 typedef UINT16                TPM2_ECC_CURVE;

@@ -631,6 +631,12 @@ ifapi_json_TPM2_ALG_ID_deserialize(json_object *jso, TPM2_ALG_ID *out)
         { TPM2_ALG_CBC, "CBC" },
         { TPM2_ALG_CFB, "CFB" },
         { TPM2_ALG_ECB, "ECB" },
+	{ TPM2_ALG_CCM, "CCM" },
+	{ TPM2_ALG_GCM, "GCM" },
+	{ TPM2_ALG_KW, "KW" },
+	{ TPM2_ALG_KWP, "KWP" },
+	{ TPM2_ALG_EAX, "EAX" },
+	{ TPM2_ALG_EDDSA, "EDDSA"}
     };
 
     const char *s = json_object_get_string(jso);
@@ -1312,7 +1318,9 @@ ifapi_json_TPMI_ALG_SYM_MODE_deserialize(json_object *jso,
         TPMI_ALG_SYM_MODE *out)
 {
     SUBTYPE_FILTER(TPMI_ALG_SYM_MODE, TPM2_ALG_ID,
-        TPM2_ALG_CTR, TPM2_ALG_OFB, TPM2_ALG_CBC, TPM2_ALG_CFB, TPM2_ALG_ECB, TPM2_ALG_NULL);
+        TPM2_ALG_CTR, TPM2_ALG_OFB, TPM2_ALG_CBC, TPM2_ALG_CFB, TPM2_ALG_ECB,
+	TPM2_ALG_CCM, TPM2_ALG_GCM, TPM2_ALG_KW, TPM2_ALG_KWP, TPM2_ALG_EAX,
+	TPM2_ALG_EDDSA, TPM2_ALG_NULL);
 }
 
 /** Deserialize a TPMI_ALG_KDF json object.

@@ -326,6 +326,12 @@ ifapi_json_TPM2_ALG_ID_serialize(const TPM2_ALG_ID in, json_object **jso)
         { TPM2_ALG_CBC, "CBC" },
         { TPM2_ALG_CFB, "CFB" },
         { TPM2_ALG_ECB, "ECB" },
+	{ TPM2_ALG_CCM, "CCM" },
+	{ TPM2_ALG_GCM, "GCM" },
+	{ TPM2_ALG_KW, "KW" },
+	{ TPM2_ALG_KWP, "KWP" },
+	{ TPM2_ALG_EAX, "EAX" },
+	{ TPM2_ALG_EDDSA, "EDDSA"}
     };
 
     for (size_t i = 0; i < sizeof(tab) / sizeof(tab[0]); i++) {
@@ -1084,7 +1090,9 @@ ifapi_json_TPMI_ALG_SYM_MODE_serialize(const TPMI_ALG_SYM_MODE in,
                                        json_object **jso)
 {
     CHECK_IN_LIST(TPMI_ALG_SYM_MODE, in, TPM2_ALG_CTR, TPM2_ALG_OFB,
-        TPM2_ALG_CBC, TPM2_ALG_CFB, TPM2_ALG_ECB, TPM2_ALG_NULL);
+        TPM2_ALG_CBC, TPM2_ALG_CFB, TPM2_ALG_ECB, TPM2_ALG_CCM,
+	TPM2_ALG_GCM, TPM2_ALG_KW, TPM2_ALG_KWP, TPM2_ALG_EAX,
+	TPM2_ALG_EDDSA, TPM2_ALG_NULL);
     return ifapi_json_TPM2_ALG_ID_serialize(in, jso);
 }
 
